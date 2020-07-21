@@ -36,7 +36,7 @@ sudo kubectl create namespace kubeapps
 sudo helm install kubeapps --namespace kubeapps bitnami/kubeapps --set useHelm3=true
 sudo kubectl create serviceaccount kubeapps-operator
 sudo kubectl create clusterrolebinding kubeapps-operator --clusterrole=cluster-admin --serviceaccount=default:kubeapps-operator
-
+kubectl port-forward -n kubeapps svc/kubeapps 8080:80 --address 0.0.0.0
 #sudo rm /var/lib/apt/lists/lock
 #sudo rm /var/cache/apt/archives/lock
 #sudo rm /var/lib/dpkg/lock*
