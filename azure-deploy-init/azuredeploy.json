@@ -41,34 +41,7 @@
               "description": "subnet Address Space"
             }
         },    
-        "hanadbIp": {
-            "type": "string",
-            "defaultValue": "10.0.0.6",
-            "metadata": {
-              "description": "HANA DB IP"
-            }
-        },    
-        "pasIp": {
-            "type": "string",
-            "defaultValue": "10.0.0.7",
-            "metadata": {
-              "description": "PAS IP"
-            }
-        },    
-        "createAzureBastion": {
-            "type": "string",
-            "defaultValue": "yes",
-            "metadata": {
-                "description": "Should it create Azure Bastion?"
-            }
-        },        
-        "bastionAddressSpace": {
-            "type": "string",
-            "defaultValue": "10.0.1.0/27",
-            "metadata": {
-              "description": "Bastion Address Space"
-            }
-        },    
+
         "vmName": {
             "type": "string",
             "defaultValue": "jumpboxlinux",
@@ -114,10 +87,6 @@
         "rg": "[resourceGroup().name]",
         "vNetAddressSpace": "[parameters('vNetAddressSpace')]",
         "subnetAddressSpace": "[parameters('subnetAddressSpace')]",
-        "hanadbIp": "[parameters('hanadbIp')]",
-        "pasIp": "[parameters('pasIp')]",
-        "bastionAddressSpace": "[parameters('bastionAddressSpace')]",    
-        "createAzureBastion": "[parameters('createAzureBastion')]",     
         "arguments": {
             "AZURE_SUBSCRIPTION_ID": "[variables('subscriptionId')]",
             "AZURE_CLIENT_ID": "[variables('clientId')]",
@@ -263,7 +232,7 @@
                     "fileUris": [
                         "https://raw.githubusercontent.com/sanjeevkumar761/one_touch_sap_deployment_on_azure/master/s4hana-infra-and-sw-e/scripts/hello.sh"
                     ],
-                    "commandToExecute": "[concat('sudo sh hello.sh ', variables('subscriptionId') , ' ' , variables('clientId') ,  ' ' , variables('clientSecret') ,  ' ' , variables('tenantId') ,  ' ' , variables('rg') ,  ' ' , variables('location') , ' ' , variables('vNetName') ,  ' ' , variables('subNetName') ,   ' ' , variables('vNetAddressSpace') ,  ' ' , variables('subnetAddressSpace') ,  ' ' , variables('hanadbIp') ,  ' ' , variables('pasIp') ,  ' '  , variables('bastionAddressSpace'),  ' '  , variables('createAzureBastion'), ' &' )]"
+                    "commandToExecute": "[concat('sudo sh hello.sh ', variables('subscriptionId') , ' ' , variables('clientId') ,  ' ' , variables('clientSecret') ,  ' ' , variables('tenantId') ,  ' ' , variables('rg') ,  ' ' , variables('location') , ' ' , variables('vNetName') ,  ' ' , variables('subNetName') ,   ' ' , variables('vNetAddressSpace') ,  ' ' , variables('subnetAddressSpace'), ' &' )]"
                 }
             }
         }
