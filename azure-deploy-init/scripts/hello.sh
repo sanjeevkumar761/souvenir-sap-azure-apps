@@ -16,8 +16,9 @@ sudo add-apt-repository \
    stable"
 sudo apt-get update
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io
-sudo usermod -aG docker $USER && newgrp docker
-
+#sudo usermod -aG docker $USER && newgrp docker
+sudo usermod -aG docker juser && newgrp docker
+sudo su - juser
 minikube start --driver=docker
 minikube status
 wget https://get.helm.sh/helm-v3.3.0-rc.1-linux-amd64.tar.gz
