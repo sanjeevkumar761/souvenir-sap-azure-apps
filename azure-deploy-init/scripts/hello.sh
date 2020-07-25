@@ -32,21 +32,35 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 kubectl version --client
 sudo apt-get update && sudo apt-get -y install socat
 
+
 git clone https://github.com/sanjeevkumar761/kubeapps.git
-cd kubeapps/chart/kubeapps
+
+cd /home/juser/kubeapps/dashboard
+docker build -t kubeapps/dashboard .
+docker tag kubeapps/dashboard souveniracr.azurecr.io/kubeapps/dashboard
+sudo curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+az acr login --name souveniracr --username $2 --password $3
+docker push souveniracr.azurecr.io/kubeapps/dashboard
+
+az acr repository list --name souveniracr --username $2 --password $3
+
+
+cd /home/juser/kubeapps/chart/kubeapps
+export HELM_EXPERIMENTAL_OCI=1
 helm chart save . kubeapps
 helm chart save . souveniracr.azurecr.io/helm/kubeapps:v1
 echo $3 | helm registry login souveniracr.azurecr.io \
   --username $2 \
   --password-stdin
 helm chart push souveniracr.azurecr.io/helm/kubeapps:v1
-helm chart pull souveniracr.azurecr.io/helm/kubeapps:v1
-helm chart export souveniracr.azurecr.io/helm/kubeapps:v1 \
-  --destination ./install
+# helm chart pull souveniracr.azurecr.io/helm/kubeapps:v1
+# helm chart export souveniracr.azurecr.io/helm/kubeapps:v1 \
+#  --destination ./install
 
 # sudo helm repo add bitnami https://charts.bitnami.com/bitnami
 sudo kubectl create namespace kubeapps
-cd install
+# cd install
+cd /home/juser/kubeapps/chart/
 helm dependency update kubeapps
 helm install kubeapps --namespace kubeapps ./kubeapps --set useHelm3=true
 
