@@ -49,7 +49,7 @@ var state = {
 const columns = [
   {
     dataField: "id",
-    hidden: true
+    hidden: false
   },
   {
     dataField: "vmname",
