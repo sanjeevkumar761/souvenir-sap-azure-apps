@@ -2,7 +2,7 @@ import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 
-const data = [
+/*const data = [
   {
     id: 0,
     vmname: "vmname",
@@ -30,7 +30,7 @@ const data = [
     name: "fish",
     price: "10.00"
   }
-];
+];*/
 
 state = {
   vms: []
@@ -90,7 +90,7 @@ const BasicTable = () => {
   return (
     <BootstrapTable
       keyField="id"
-      data={this.state.products}
+      data={this.state.vms}
       columns={this.state.columns}
       selectRow={ selectRow }
       striped
