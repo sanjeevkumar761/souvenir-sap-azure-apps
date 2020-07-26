@@ -22,23 +22,25 @@ Install and run Snapshot Manager:
 Setup json-server for data testing:  
 1) npm install -g json-server
 2) save this as db.json in src/data 
-{  
-    "results": [  
-    {  
-        id: 0,
-        vmname: "vmname",
-        osdisk: "osdisk",
-        snapshot: "snapshot",
-        snapshotcreatedon: "July 26 2020"
-    },  
-    {    
-        id: 1,
-        vmname: "vmname2",
-        osdisk: "osdisk2",
-        snapshot: "snapshot2",
-        snapshotcreatedon: "July 27 2020"
-    }]  
-}  
+{
+  "results": [
+    {
+      "id": 0,
+      "vmname": "vmname",
+      "osdisk": "osdisk",
+      "snapshot": "snapshot",
+      "snapshotcreatedon": "July 26 2020"
+    },
+    {
+      "id": 1,
+      "vmname": "vmname2",
+      "osdisk": "osdisk2",
+      "snapshot": "snapshot2",
+      "snapshotcreatedon": "July 27 2020"
+    }
+  ]
+}
+ 
 3) json-server --watch src/data/db.json --port 4000
 
 

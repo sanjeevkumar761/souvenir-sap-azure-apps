@@ -36,7 +36,7 @@ import axios from 'axios';
 var state = {
   vms: [],
   componentDidMount() {
-    axios.get('http://localhost:4000/comments')
+    axios.get('http://localhost:4000/results')
       .then(response => {
         this.setState({
           vms: response.data
