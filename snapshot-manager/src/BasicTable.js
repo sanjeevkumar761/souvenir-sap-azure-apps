@@ -32,6 +32,11 @@ const data = [
   }
 ];
 
+state = {
+  vms: []
+ 
+}
+
 const columns = [
   {
     dataField: "id",
@@ -67,6 +72,15 @@ const columns = [
   }
 ];
 
+componentDidMount() {
+  axios.get('http://localhost:4000/comments')
+    .then(response => {
+      this.setState({
+        vms: response.data
+      });
+    });
+};
+
 const selectRow = {
   mode: 'checkbox',
   clickToSelect: true
@@ -76,8 +90,8 @@ const BasicTable = () => {
   return (
     <BootstrapTable
       keyField="id"
-      data={data}
-      columns={columns}
+      data={this.state.products}
+      columns={this.state.columns}
       selectRow={ selectRow }
       striped
       hover
