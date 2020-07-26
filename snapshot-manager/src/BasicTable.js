@@ -33,19 +33,6 @@ import axios from 'axios';
   }
 ];*/
 
-var state = {
-  vms: [],
-  componentDidMount() {
-    axios.get('http://localhost:4000/results')
-      .then(response => {
-        console.log("got response");
-        this.setState({
-          vms: response.data
-        });
-      });
-  }
- 
-}
 
 const columns = [
   {
@@ -87,11 +74,29 @@ const selectRow = {
   clickToSelect: true
 };
 
+class Container extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      vms: [],
+      componentDidMount() {
+        axios.get('http://localhost:4000/results')
+          .then(response => {
+            console.log("got response");
+            this.setState({
+              vms: response.data
+            });
+          });
+      }
+    }
+  }
+}
+
 const BasicTable = () => {
   return (
     <BootstrapTable
       keyField="id"
-      data={state.vms}
+      data={props.data}
       columns={columns}
       selectRow={ selectRow }
       striped
