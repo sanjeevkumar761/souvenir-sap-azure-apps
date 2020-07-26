@@ -33,7 +33,15 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 ];*/
 
 state = {
-  vms: []
+  vms: [],
+  componentDidMount() {
+    axios.get('http://localhost:4000/comments')
+      .then(response => {
+        this.setState({
+          vms: response.data
+        });
+      });
+  }
  
 }
 
@@ -71,15 +79,6 @@ const columns = [
     sort: true
   }
 ];
-
-componentDidMount() {
-  axios.get('http://localhost:4000/comments')
-    .then(response => {
-      this.setState({
-        vms: response.data
-      });
-    });
-};
 
 const selectRow = {
   mode: 'checkbox',
