@@ -1,6 +1,7 @@
 import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
+import axios from 'axios';
 
 /*const data = [
   {
@@ -32,7 +33,7 @@ import paginationFactory from "react-bootstrap-table2-paginator";
   }
 ];*/
 
-state = {
+var state = {
   vms: [],
   componentDidMount() {
     axios.get('http://localhost:4000/comments')
