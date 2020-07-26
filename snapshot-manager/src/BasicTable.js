@@ -36,16 +36,13 @@ const columns = [
     hidden: true
   },
   {
-    dataField: "name",
-    text: "Grocery",
+    dataField: "vmname",
+    text: "VM Name",
     sort: true
   },
   {
-    dataField: "price",
-    text: "Price",
-    formatter: (cell, row) => {
-      return <p>${cell}</p>;
-    },
+    dataField: "osdisk",
+    text: "OS Disk",
     sort: true,
     sortFunc: (a, b, order, dataField, rowA, rowB) => {
       const numA = parseFloat(a);
@@ -55,6 +52,16 @@ const columns = [
       }
       return numA - numB; // desc
     }
+  },
+  {
+    dataField: "snapshot",
+    text: "Snapshot",
+    sort: true
+  },
+  {
+    dataField: "snapshotcreatedon",
+    text: "Last snapshot created on",
+    sort: true
   }
 ];
 

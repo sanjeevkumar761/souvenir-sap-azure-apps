@@ -7,7 +7,7 @@ import "./styles.css";
 const App = () => {
   return (
     <div className="App">
-      <h2>React Bootstrap Table2</h2>
+      <h2>Snapshot Manager</h2>
       <BasicTable />
     </div>
   );

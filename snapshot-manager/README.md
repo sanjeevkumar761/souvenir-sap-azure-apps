@@ -1,6 +1,6 @@
 Snapshot Manager
 
-Setup steps:
+Development environment setup steps:
 1) Install node js 12 by executing commands:  
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -  
     curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -  
@@ -8,8 +8,15 @@ Setup steps:
 2) Install react app tooling :  
     npm install -g create-react-app
     create-react-app snapshot-manager
-3) Start react app:  
+
+Install and run Snapshot Manager:
+1) Install node js 12 by executing commands:  
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -  
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -  
+    sudo apt install nodejs  
+2) Start react app:  
     cd snapshot-manager  
+    npm install
     npm start  
 
 
