@@ -67,12 +67,18 @@ const columns = [
   }
 ];
 
+const selectRow = {
+  mode: 'checkbox',
+  clickToSelect: true
+};
+
 const BasicTable = () => {
   return (
     <BootstrapTable
       keyField="id"
       data={data}
       columns={columns}
+      selectRow={ selectRow }
       striped
       hover
       condensed
