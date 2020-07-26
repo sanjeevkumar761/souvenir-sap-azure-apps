@@ -90,8 +90,8 @@ const BasicTable = () => {
   return (
     <BootstrapTable
       keyField="id"
-      data={this.state.vms}
-      columns={this.state.columns}
+      data={state.vms}
+      columns={columns}
       selectRow={ selectRow }
       striped
       hover
