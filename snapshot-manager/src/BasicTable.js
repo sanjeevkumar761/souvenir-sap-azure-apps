@@ -38,6 +38,7 @@ var state = {
   componentDidMount() {
     axios.get('http://localhost:4000/results')
       .then(response => {
+        console.log("got response");
         this.setState({
           vms: response.data
         });

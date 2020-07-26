@@ -41,7 +41,7 @@ Setup json-server for data testing:
   ]
 }
  
-3) json-server --watch src/data/db.json --port 4000
+3) json-server  ./src/data/db.json --port 4000
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
