@@ -5,8 +5,10 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 const data = [
   {
     id: 0,
-    name: "banana",
-    price: "0.25"
+    vmname: "vmname",
+    osdisk: "osdisk",
+    snapshot: "snapshot",
+    snapshotcreatedon: "July 26 2020"
   },
   {
     id: 1,
