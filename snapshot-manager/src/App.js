@@ -40,6 +40,12 @@ class App extends Component {
   
   render() {
     return (
+      <div className="App">
+        <h2>Snapshot Manager</h2>
+        <BasicTable />
+      </div>
+    );
+    /*return (
       <div className="container" style={{ marginTop: 50 }}>
         <BootstrapTable 
         striped
@@ -48,7 +54,7 @@ class App extends Component {
         data={ this.state.products } 
         columns={ this.state.columns } />
       </div>
-    );
+    );*/
   }
 }
 
