@@ -21,7 +21,7 @@ const selectRow = {
 
 
 class App extends Component {
-  handleGetSelectedData = (mode) => {
+  handleGetSelectedData = () => {
     console.log(mode);
     console.log(this.node.selectionContext.selected);
   }
@@ -100,7 +100,7 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Snapshot Manager</h2>
-          <Button onClick={ this.handleGetSelectedData("create") } variant="success">Create Snapshot</Button>{' '}
+          <Button onClick={ this.handleGetSelectedData() } variant="success">Create Snapshot</Button>{' '}
           <Button onClick={() => { alert('something') }} variant="primary">Revert from Snapshot</Button>{' '}
           <Button onClick={() => { alert('something') }} variant="warning">Delete Snapshot</Button>{' '}
 
