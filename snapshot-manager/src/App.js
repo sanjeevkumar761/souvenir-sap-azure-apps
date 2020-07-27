@@ -23,12 +23,7 @@ class App extends Component {
   state = {
     vms: [],
     columns: [
-      {
-        dataField: "id",
-        text: "id",
-        hidden: false
-      },
-      {
+       {
         dataField: "vmid",
         text: "VM Id",
         hidden: true
@@ -100,7 +95,7 @@ class App extends Component {
       <div className="App">
         <h2>Snapshot Manager</h2>
           <BootstrapTable
-            keyField="id"
+            keyField="vmid"
             data={this.state.vms}
             columns={this.state.columns}
             selectRow={ selectRow }
