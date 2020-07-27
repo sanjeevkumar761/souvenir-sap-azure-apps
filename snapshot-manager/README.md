@@ -41,7 +41,9 @@ Setup json-server for data testing:
   ]
 }
  
-3) json-server  ./src/data/db.json --port 4000
+3) json-server  ./src/data/db.json --port 4000  
+
+Table component used is this one https://react-bootstrap-table.github.io/react-bootstrap-table2/storybook/index.html?selectedKind=Basic%20Table&selectedStory=Exposed%20API&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel  
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
