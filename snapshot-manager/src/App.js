@@ -73,8 +73,8 @@ class App extends Component {
         <h2>Snapshot Manager</h2>
           <BootstrapTable
             keyField="id"
-            data={this.state.cms}
-            columns={columns}
+            data={this.state.vms}
+            columns={this.state.columns}
             selectRow={ selectRow }
             striped
             hover
