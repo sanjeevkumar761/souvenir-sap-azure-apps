@@ -95,9 +95,9 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Snapshot Manager</h2>
-          <Button variant="primary">Create Snapshot</Button>{' '}
-          <Button variant="secondary">Revert from Snapshot</Button>{' '}
-          <Button variant="success">Delete Snapshot</Button>{' '}
+          <Button variant="success">Create Snapshot</Button>{' '}
+          <Button variant="primary">Revert from Snapshot</Button>{' '}
+          <Button variant="secondary">Delete Snapshot</Button>{' '}
 
           <BootstrapTable
             keyField="vmid"
