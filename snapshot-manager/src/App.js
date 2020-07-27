@@ -73,7 +73,7 @@ class App extends Component {
           });
         }
         this.setState({
-          vms: response.data
+          vms: vmsData
         });
       });
       /*const apiUrl = 'http://94.245.110.170:4000/results';
