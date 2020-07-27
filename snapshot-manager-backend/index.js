@@ -57,6 +57,8 @@ const port = 4000
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/vms', function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain, function (err, credentials, subscriptions) {
     if (err) return console.log(err);
     resourceClient = new ResourceManagementClient(credentials, subscriptionId);
