@@ -67,7 +67,7 @@ class App extends Component {
           vmsData.push({
             "vmid": response.data[0][i].id,
             "vmname": response.data[0][i].name,
-            "osdisk": "",
+            "osdisk": response.data[0][i].storageProfile.osDisk.name,
             "snapshot": "",
             "snapshotcreatedon": ""
           });
