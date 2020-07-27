@@ -59,12 +59,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/results')
+    /*axios.get('http://localhost:4000/results')
       .then(response => {
         this.setState({
           vms: response.data
         });
-      });
+      });*/
+      const apiUrl = 'http://localhost:4000/results';
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => console.log('This is your data', data));
   }
 
 
