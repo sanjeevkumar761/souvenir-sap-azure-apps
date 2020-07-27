@@ -67,7 +67,10 @@ class App extends Component {
       });*/
       const apiUrl = 'http://94.245.110.170:4000/results';
       fetch(apiUrl)
-        .then((response) => response.json())
+        .then((response) => {
+          this.setState({
+            vms: response.json
+          })
         .then((data) => console.log('This is your data', data));
   }
 
