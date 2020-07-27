@@ -13,6 +13,12 @@ import axios from 'axios';
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 
+const selectRow = {
+  mode: 'checkbox',
+  clickToSelect: true
+};
+
+
 class App extends Component {
   state = {
     vms: [],
@@ -60,6 +66,8 @@ class App extends Component {
         });
       });
   }
+
+
   
   render() {
     /*return (
