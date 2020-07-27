@@ -12,6 +12,7 @@ import "./styles.css";
 import axios from 'axios';
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
+import Button from 'react-bootstrap/Button'
 
 const selectRow = {
   mode: 'checkbox',
@@ -97,7 +98,7 @@ class App extends Component {
           <Button variant="primary">Primary</Button>{' '}
           <Button variant="secondary">Secondary</Button>{' '}
           <Button variant="success">Success</Button>{' '}
-          
+
           <BootstrapTable
             keyField="vmid"
             data={this.state.vms}
