@@ -62,6 +62,7 @@ sudo kubectl create namespace kubeapps
 # cd install
 cd /home/juser/kubeapps/chart/
 helm dependency update kubeapps
+sleep 2m
 helm install kubeapps --namespace kubeapps ./kubeapps --set useHelm3=true
 
 sudo kubectl create serviceaccount kubeapps-operator
