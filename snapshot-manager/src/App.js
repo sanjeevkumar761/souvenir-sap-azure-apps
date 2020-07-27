@@ -104,6 +104,7 @@ class App extends Component {
           <Button onClick={() => { alert('something') }} variant="warning">Delete Snapshot</Button>{' '}
 
           <BootstrapTable
+            ref={ n => this.node = n }
             keyField="vmid"
             data={this.state.vms}
             columns={this.state.columns}
