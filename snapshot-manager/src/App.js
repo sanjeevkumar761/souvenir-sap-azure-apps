@@ -24,7 +24,7 @@ class App extends Component {
   handleGetSelectedData = () => {
     console.log(this.node.selectionContext.selected);
   }
-  
+
   state = {
     vms: [],
     columns: [
@@ -99,11 +99,7 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Snapshot Manager</h2>
-          <Button onClick={() => { 
-              alert('create snapshot clicked');
-              this.handleGetSelectedData;
-
-            }} 
+          <Button onClick={() => { this.handleGetSelectedData  }} 
             variant="success">Create Snapshot</Button>{' '}
 
           <Button onClick={() => { alert('something') }} variant="primary">Revert from Snapshot</Button>{' '}
