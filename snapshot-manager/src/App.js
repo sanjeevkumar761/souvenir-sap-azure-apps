@@ -25,6 +25,7 @@ class App extends Component {
     columns: [
       {
         dataField: "id",
+        text: "id",
         hidden: false
       },
       {
