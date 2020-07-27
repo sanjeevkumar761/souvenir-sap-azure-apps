@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-   
+    "azure-arm-compute": "^0.18.1",
+    "azure-arm-resource": "^1.4.4-preview",
+    "azure-arm-storage": "^0.13.1-preview",
+    "azure-arm-network": "^0.13.2",
+    "ms-rest-azure": "^1.14.3",
+    "async": "0.2.7"
   }
 }
