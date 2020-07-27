@@ -78,7 +78,7 @@ const BasicTable = () => {
   return (
     <BootstrapTable
       keyField="id"
-      data={this.StaticRange.products}
+      data={this.state.products}
       columns={columns}
       selectRow={ selectRow }
       striped
