@@ -21,8 +21,8 @@ const selectRow = {
 
 
 class App extends Component {
-  handleGetSelectedData = () => {
-    console.log(this.node.selectionContext.selected);
+  handleGetSelectedDataForCreate = () => {
+    console.log("In create mode: " + this.node.selectionContext.selected);
   }
 
   state = {
@@ -99,7 +99,7 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Snapshot Manager</h2>
-          <Button onClick={ this.handleGetSelectedData } variant="success">Create Snapshot</Button>{' '}
+          <Button onClick={ this.handleGetSelectedDataForCreate } variant="success">Create Snapshot</Button>{' '}
           <Button onClick={() => { alert('something') }} variant="primary">Revert from Snapshot</Button>{' '}
           <Button onClick={() => { alert('something') }} variant="warning">Delete Snapshot</Button>{' '}
 
