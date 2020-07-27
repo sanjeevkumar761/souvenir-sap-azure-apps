@@ -62,76 +62,7 @@ msRestAzure.loginWithServicePrincipalSecret(clientId, secret, domain, function (
   networkClient = new NetworkManagementClient(credentials, subscriptionId);
   
   async.series([
-    function (callback) {
-      ///////////////////////////////////////////////////////////////////////////////////
-      //Task1: Create VM. This is a fairly complex task. Hence we have a wrapper method//
-      //named createVM() that encapsulates the steps to create a VM. Other tasks are   //
-      //fairly simple in comparison. Hence we don't have a wrapper method for them.    //
-      ///////////////////////////////////////////////////////////////////////////////////
-      console.log('\n>>>>>>>Start of Task1: Create a VM named: ' + vmName);
-      createVM(function (err, result) {
-        if (err) {
-          console.log(util.format('\n???????Error in Task1: while creating a VM:\n%s', 
-            util.inspect(err, { depth: null })));
-          callback(err);
-        } else {
-          console.log(util.format('\n######End of Task1: Create a VM is succesful.\n%s', 
-            util.inspect(result, { depth: null })));
-          callback(null, result);
-        }
-      });
-    },
-    function (callback) {
-      /////////////////////////////////////////////////////////
-      //Task2: Get Information about the vm created in Task1.//
-      /////////////////////////////////////////////////////////
-      console.log('\n>>>>>>>Start of Task2: Get VM Info about VM: ' + vmName);
-      computeClient.virtualMachines.get(resourceGroupName, vmName, function (err, result) {
-        if (err) {
-          console.log(util.format('\n???????Error in Task2: while getting the VM Info:\n%s', 
-            util.inspect(err, { depth: null })));
-          callback(err);
-        } else {
-          console.log(util.format('\n######End of Task2: Get VM Info is successful.\n%s', 
-            util.inspect(result, { depth: null })));
-          callback(null, result);
-        }
-      });
-    },
-    function (callback) {
-      ///////////////////////////
-      //Task3: Poweroff the VM.//
-      ///////////////////////////
-      console.log('\n>>>>>>>Start of Task3: Poweroff the VM: ' + vmName);
-      computeClient.virtualMachines.powerOff(resourceGroupName, vmName, function (err, result) {
-        if (err) {
-          console.log(util.format('\n???????Error in Task3: while powering off the VM:\n%s', 
-            util.inspect(err, { depth: null })));
-          callback(err);
-        } else {
-          console.log(util.format('\n######End of Task3: Poweroff the VM is successful.\n%s', 
-            util.inspect(result, { depth: null })));
-          callback(null, result);
-        }
-      });
-    },
-    function (callback) {
-      ////////////////////////
-      //Task4: Start the VM.//
-      ////////////////////////
-      console.log('\n>>>>>>>Start of Task4: Start the VM: ' + vmName);
-      computeClient.virtualMachines.start(resourceGroupName, vmName, function (err, result) {
-        if (err) {
-          console.log(util.format('\n???????Error in Task4: while starting the VM:\n%s', 
-            util.inspect(err, { depth: null })));
-          callback(err);
-        } else {
-          console.log(util.format('\n######End of Task4: Start the VM is successful.\n%s', 
-            util.inspect(result, { depth: null })));
-          callback(null, result);
-        }
-      });
-    },
+    
     function (callback) {
       //////////////////////////////////////////////////////
       //Task5: Lisitng All the VMs under the subscription.//
