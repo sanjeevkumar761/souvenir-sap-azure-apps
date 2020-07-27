@@ -29,6 +29,11 @@ class App extends Component {
         hidden: false
       },
       {
+        dataField: "vmid",
+        text: "VM Id",
+        hidden: true
+      },      
+      {
         dataField: "vmname",
         text: "VM Name",
         sort: true
@@ -62,6 +67,16 @@ class App extends Component {
   componentDidMount() {
     axios.get('http://94.245.110.170:4000/results')
       .then(response => {
+        var vmsData = [];
+        for(var i=0; i < response.data[0].length; i++){
+          vmsData.push({
+            "vmid": response.data[0][i].id,
+            "vmname": response.data[0][i].name,
+            "osdisk": "",
+            "snapshot": "",
+            "snapshotcreatedon": ""
+          });
+        }
         this.setState({
           vms: response.data
         });
