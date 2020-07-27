@@ -94,6 +94,10 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Snapshot Manager</h2>
+          <Button variant="primary">Primary</Button>{' '}
+          <Button variant="secondary">Secondary</Button>{' '}
+          <Button variant="success">Success</Button>{' '}
+          
           <BootstrapTable
             keyField="vmid"
             data={this.state.vms}
