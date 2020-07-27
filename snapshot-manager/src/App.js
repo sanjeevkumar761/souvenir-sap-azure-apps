@@ -5,7 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";*/
 
 import React, { Component } from 'react';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'; 
+import ReactDOM from "react-dom";
+import BasicTable from "./BasicTable";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./styles.css";
 import BootstrapTable from 'react-bootstrap-table-next';
 import axios from 'axios';
 
