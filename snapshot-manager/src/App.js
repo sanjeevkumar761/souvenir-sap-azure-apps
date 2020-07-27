@@ -22,7 +22,6 @@ const selectRow = {
 
 class App extends Component {
   handleGetSelectedData = () => {
-    console.log(mode);
     console.log(this.node.selectionContext.selected);
   }
 
