@@ -12,6 +12,7 @@ var ComputeManagementClient = require('azure-arm-compute');
 var StorageManagementClient = require('azure-arm-storage');
 var NetworkManagementClient = require('azure-arm-network');
 var ResourceManagementClient = require('azure-arm-resource').ResourceManagementClient;
+const dotenv = require('dotenv');
 
 _validateEnvironmentVariables();
 var clientId = process.env['CLIENT_ID'];
