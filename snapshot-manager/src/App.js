@@ -104,10 +104,11 @@ class App extends Component {
     return (
       <div className="App">
         <h2>Snapshot Manager</h2>
+        <h2>&nbsp;</h2>
           <Button onClick={ this.handleGetSelectedDataForCreate } variant="success">Create Snapshot</Button>{' '}
           <Button onClick={() => { alert('something') }} variant="primary">Revert from Snapshot</Button>{' '}
           <Button onClick={() => { alert('something') }} variant="warning">Delete Snapshot</Button>{' '}
-
+          <h2>&nbsp;</h2>
           <BootstrapTable
             ref={ n => this.node = n }
             keyField="vmid"
