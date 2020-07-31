@@ -12,13 +12,13 @@ var ComputeManagementClient = require('azure-arm-compute');
 var StorageManagementClient = require('azure-arm-storage');
 var NetworkManagementClient = require('azure-arm-network');
 var ResourceManagementClient = require('azure-arm-resource').ResourceManagementClient;
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 
 _validateEnvironmentVariables();
 var clientId = process.env.CLIENT_ID;
 var domain = process.env.DOMAIN;
 var secret = process.env.APPLICATION_SECRET;
-var subscriptionId = process.env['AZURE_SUBSCRIPTION_ID'];
+var subscriptionId = process.env.AZURE_SUBSCRIPTION_ID;
 var resourceClient, computeClient, storageClient, networkClient;
 //Sample Config
 var randomIds = {};
