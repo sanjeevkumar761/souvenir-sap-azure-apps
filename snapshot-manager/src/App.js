@@ -15,6 +15,11 @@ import paginationFactory from "react-bootstrap-table2-paginator";
 import Button from 'react-bootstrap/Button'
 import { API_HOST, API_PORT } from  'react-native-dotenv'
 
+const env = () => {
+  console.log(API_HOST) // variables from .env file
+  console.log(API_PORT)
+ }
+
 const selectRow = {
   mode: 'checkbox',
   clickToSelect: true
