@@ -108,13 +108,13 @@ app.post('/snapshots',  cors(), function (req, res) {
   //Creates Snapshots asynchronously
   //Log snapshot creation details in json db
   //Returns snapshot "in progress" as response for each VM and OS disk
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  //res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   console.log("inside /snapshots");
   console.log(JSON.stringify(req.body));
 
-  res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  
+  //res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
+  //res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.headers['access-control-allow-origin']; // '*'
   res.json({"message":"started snapshots"});
 })
 
