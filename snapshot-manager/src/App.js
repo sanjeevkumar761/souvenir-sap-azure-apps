@@ -66,9 +66,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(`{API_HOST}`);
-    console.log(`{API_PORT}`);
-    axios.get('http://`{API_HOST}`:`{API_PORT}`/vms')
+    console.log({API_HOST});
+    console.log({API_PORT});
+    axios.get('http://{API_HOST}:{API_PORT}/vms')
       .then(response => {
         var vmsData = [];
         for(var i=0; i < response.data[0].length; i++){
