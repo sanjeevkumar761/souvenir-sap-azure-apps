@@ -13,12 +13,9 @@ import axios from 'axios';
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import Button from 'react-bootstrap/Button'
-import { API_HOST, API_PORT } from  'react-native-dotenv'
+import * as env from '../env.json';
 
-const env = () => {
-  console.log(API_HOST) // variables from .env file
-  console.log(API_PORT)
- }
+console.log(env.API_HOST); // output 'testing'
 
 const selectRow = {
   mode: 'checkbox',
