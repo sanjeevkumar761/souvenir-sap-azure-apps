@@ -104,7 +104,7 @@ app.get('/vms', function (req, res) {
   });
 })
 
-app.post('/snapshots',  cors(), function (req, res) {
+app.post('/snapshots',  function (req, res) {
   //Creates Snapshots asynchronously
   //Log snapshot creation details in json db
   //Returns snapshot "in progress" as response for each VM and OS disk
