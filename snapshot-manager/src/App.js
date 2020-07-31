@@ -118,7 +118,7 @@ class App extends Component {
             striped
             hover
             condensed
-            pagination={paginationFactory({})}
+            //pagination={paginationFactory({})}
           />
       </div>
     );
