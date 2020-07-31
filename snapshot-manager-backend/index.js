@@ -56,6 +56,8 @@ const express = require('express')
 const app = express()
 const port = 4000
 
+app.options('*', cors());
+
 app.get('/', (req, res) => res.send('Hello World!'))
 
 app.get('/vms', function (req, res) {
@@ -104,7 +106,7 @@ app.get('/vms', function (req, res) {
   });
 })
 
-app.post('/snapshots',  function (req, res) {
+app.post('/snapshots',  cors(), function (req, res) {
   //Creates Snapshots asynchronously
   //Log snapshot creation details in json db
   //Returns snapshot "in progress" as response for each VM and OS disk
