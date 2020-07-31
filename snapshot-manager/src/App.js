@@ -13,7 +13,7 @@ import axios from 'axios';
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import Button from 'react-bootstrap/Button'
-import { API_HOST, API_PORT } from "@env"
+import { API_HOST, API_PORT } from  'react-native-dotenv'
 
 const selectRow = {
   mode: 'checkbox',
@@ -66,7 +66,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(`${API_HOST}`);
+    console.log(API_HOST);
     console.log({API_PORT});
     axios.get('http://{API_HOST}:{API_PORT}/vms')
       .then(response => {
