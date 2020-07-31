@@ -66,6 +66,8 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log(process.env.API_HOST);
+    console.log(process.env.API_PORT);
     axios.get('http://process.env.API_HOST:process.env.API_PORT/vms')
       .then(response => {
         var vmsData = [];
