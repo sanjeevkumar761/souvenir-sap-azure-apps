@@ -13,6 +13,7 @@ var StorageManagementClient = require('azure-arm-storage');
 var NetworkManagementClient = require('azure-arm-network');
 var ResourceManagementClient = require('azure-arm-resource').ResourceManagementClient;
 const dotenv = require('dotenv').config();
+var bodyParser = require('body-parser');
 
 _validateEnvironmentVariables();
 var clientId = process.env.CLIENT_ID;
@@ -57,6 +58,9 @@ const app = express()
 const port = 4000
 
 app.options('*', cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
