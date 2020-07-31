@@ -285,7 +285,7 @@ function _validateEnvironmentVariables() {
   var envs = [];
   console.log("process.env.CLIENT_ID:" + process.env.CLIENT_ID);
   console.log("process.env.DOMAIN:" + process.env.DOMAIN);
-  console.log("process.env.APPLICATION_SECRET:" + process.env.APPLICATION_SECRET);
+  //console.log("process.env.APPLICATION_SECRET:" + process.env.APPLICATION_SECRET);
   console.log("process.env.AZURE_SUBSCRIPTION_ID:" + process.env.AZURE_SUBSCRIPTION_ID);
   if (!process.env.CLIENT_ID) envs.push('CLIENT_ID');
   if (!process.env.DOMAIN) envs.push('DOMAIN');
