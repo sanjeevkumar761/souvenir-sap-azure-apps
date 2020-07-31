@@ -13,7 +13,7 @@ import axios from 'axios';
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import Button from 'react-bootstrap/Button'
-import * as env from '../env.json';
+import * as env from './env.json';
 
 console.log(env.API_HOST); // output 'testing'
 
