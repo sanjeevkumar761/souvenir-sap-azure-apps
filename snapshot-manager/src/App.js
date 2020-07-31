@@ -29,9 +29,9 @@ class App extends Component {
     var selectedVMs = {
       "vms": this.node.selectionContext.selected
     }
-    axios.post('http://' + env.API_HOST + ":" + env.API_PORT + "/snapshots")
+    axios.post('http://' + env.API_HOST + ":" + env.API_PORT + "/snapshots", { selectedVMs })
     .then(response => {
-        console.log(response);
+        console.log(response.data);
     });
   }
 
