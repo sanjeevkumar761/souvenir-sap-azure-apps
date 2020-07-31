@@ -26,6 +26,13 @@ const selectRow = {
 class App extends Component {
   handleGetSelectedDataForCreate = () => {
     console.log("In create mode: " + this.node.selectionContext.selected);
+    var selectedVMs = {
+      "vms": this.node.selectionContext.selected
+    }
+    axios.post('http://' + env.API_HOST + ":" + env.API_PORT + "/snapshots")
+    .then(response => {
+        console.log(response);
+    });
   }
 
   state = {

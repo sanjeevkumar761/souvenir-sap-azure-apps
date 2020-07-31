@@ -107,8 +107,9 @@ app.post('/snapshots', function (req, res) {
   //Creates Snapshots asynchronously
   //Log snapshot creation details in json db
   //Returns snapshot "in progress" as response for each VM and OS disk
-  
-
+  console.log("inside /snapshots");
+  console.log(JSON.stringify(req.body));
+  res.json({"message":"started snapshots"});
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
