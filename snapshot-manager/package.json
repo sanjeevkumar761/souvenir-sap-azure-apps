@@ -15,7 +15,8 @@
     "react-bootstrap-table-next": "^4.0.3",
     "react-bootstrap-table2-paginator": "^2.1.2",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-native-dotenv": "2.2.5"
   },
   "scripts": {
     "start": "react-scripts start",
