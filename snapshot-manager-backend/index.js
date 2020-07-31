@@ -108,6 +108,7 @@ app.post('/snapshots', function (req, res) {
   //Log snapshot creation details in json db
   //Returns snapshot "in progress" as response for each VM and OS disk
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   console.log("inside /snapshots");
   console.log(JSON.stringify(req.body));
