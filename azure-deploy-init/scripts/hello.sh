@@ -33,12 +33,13 @@ kubectl version --client
 sudo apt-get update && sudo apt-get -y install socat
 sudo curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-sleep 2m
+
 
 sudo kubectl create namespace kubeapps
 sudo su
 
 az acr login --name souveniracr --username $2 --password $3 
+docker pull souveniracr.azurecr.io/kubeapps/dashboard
 
 export HELM_EXPERIMENTAL_OCI=1
 echo $3 | helm registry login souveniracr.azurecr.io \
@@ -61,6 +62,7 @@ sudo helm install kubeapps --namespace kubeapps ./kubeapps --set useHelm3=true
 # cd install
 sudo kubectl create serviceaccount kubeapps-operator
 sudo kubectl create clusterrolebinding kubeapps-operator --clusterrole=cluster-admin --serviceaccount=default:kubeapps-operator
+sleep 2m
 kubectl port-forward -n kubeapps svc/kubeapps 8080:80 --address 0.0.0.0
 #sudo rm /var/lib/apt/lists/lock
 #sudo rm /var/cache/apt/archives/lock
