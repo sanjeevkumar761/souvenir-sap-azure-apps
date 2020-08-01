@@ -36,14 +36,15 @@ sudo curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 sleep 2m
 
 sudo kubectl create namespace kubeapps
+sudo su
 
 az acr login --name souveniracr --username $2 --password $3 
 
+export HELM_EXPERIMENTAL_OCI=1
 echo $3 | helm registry login souveniracr.azurecr.io \
   --username $2 \
   --password-stdin
 
-export HELM_EXPERIMENTAL_OCI=1
 helm chart pull souveniracr.azurecr.io/helm/kubeapps:v1
 helm chart export souveniracr.azurecr.io/helm/kubeapps:v1 \
   --destination ./install
