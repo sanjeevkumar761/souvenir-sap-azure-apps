@@ -32,6 +32,13 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 kubectl version --client
 sudo apt-get update && sudo apt-get -y install socat
 
+sleep 2m
+
+sudo kubectl create namespace kubeapps
+
+echo $3 | helm registry login souveniracr.azurecr.io \
+  --username $2 \
+  --password-stdin
 
 export HELM_EXPERIMENTAL_OCI=1
 helm chart pull souveniracr.azurecr.io/helm/kubeapps:v1
@@ -39,13 +46,14 @@ helm chart export souveniracr.azurecr.io/helm/kubeapps:v1 \
   --destination ./install
 
 cd install
+helm dependency update kubeapps
 helm install kubeapps --namespace kubeapps ./kubeapps --set useHelm3=true
 # helm chart pull souveniracr.azurecr.io/helm/kubeapps:v1
 # helm chart export souveniracr.azurecr.io/helm/kubeapps:v1 \
 #  --destination ./install
 
 # sudo helm repo add bitnami https://charts.bitnami.com/bitnami
-sudo kubectl create namespace kubeapps
+
 # cd install
 sudo kubectl create serviceaccount kubeapps-operator
 sudo kubectl create clusterrolebinding kubeapps-operator --clusterrole=cluster-admin --serviceaccount=default:kubeapps-operator
