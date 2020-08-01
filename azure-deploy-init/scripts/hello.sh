@@ -31,10 +31,13 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 kubectl version --client
 sudo apt-get update && sudo apt-get -y install socat
+sudo curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 sleep 2m
 
 sudo kubectl create namespace kubeapps
+
+az acr login --name souveniracr --username $2 --password $3 
 
 echo $3 | helm registry login souveniracr.azurecr.io \
   --username $2 \
