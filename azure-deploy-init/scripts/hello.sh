@@ -51,7 +51,7 @@ helm chart export souveniracr.azurecr.io/helm/kubeapps:v1 \
 
 cd install
 helm dependency update kubeapps
-helm install kubeapps --namespace kubeapps ./kubeapps --set useHelm3=true
+sudo helm install kubeapps --namespace kubeapps ./kubeapps --set useHelm3=true
 # helm chart pull souveniracr.azurecr.io/helm/kubeapps:v1
 # helm chart export souveniracr.azurecr.io/helm/kubeapps:v1 \
 #  --destination ./install
