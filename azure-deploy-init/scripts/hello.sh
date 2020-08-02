@@ -74,6 +74,7 @@ git clone https://sanjeku@dev.azure.com/sanjeku/souvenir/_git/souvenir-sap-azure
 cd souvenir-sap-azure-apps
 cd k8s-login-helper 
 npm install
+sudo su
 export HOST=0.0.0.0
 node index.js &
 
