@@ -53,6 +53,10 @@ helm chart export souveniracr.azurecr.io/helm/kubeapps:v1 \
 cd install
 helm dependency update kubeapps
 sudo helm install kubeapps --namespace kubeapps ./kubeapps --set useHelm3=true
+
+sudo kubectl create namespace sap-azure-apps
+sudo su
+
 # helm chart pull souveniracr.azurecr.io/helm/kubeapps:v1
 # helm chart export souveniracr.azurecr.io/helm/kubeapps:v1 \
 #  --destination ./install
@@ -62,8 +66,18 @@ sudo helm install kubeapps --namespace kubeapps ./kubeapps --set useHelm3=true
 # cd install
 sudo kubectl create serviceaccount kubeapps-operator
 sudo kubectl create clusterrolebinding kubeapps-operator --clusterrole=cluster-admin --serviceaccount=default:kubeapps-operator
+
+
+cd /home/juser
+sudo apt install -y npm 
+git clone https://sanjeku@dev.azure.com/sanjeku/souvenir/_git/souvenir-sap-azure-apps
+cd souvenir-sap-azure-apps
+cd k8s-login-helper 
+node index.js &
+
 sleep 3m
 sudo kubectl port-forward -n kubeapps svc/kubeapps 8080:80 --address 0.0.0.0
+
 #sudo rm /var/lib/apt/lists/lock
 #sudo rm /var/cache/apt/archives/lock
 #sudo rm /var/lib/dpkg/lock*
