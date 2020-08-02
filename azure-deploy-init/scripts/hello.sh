@@ -73,9 +73,11 @@ sudo apt install -y npm
 git clone https://sanjeku@dev.azure.com/sanjeku/souvenir/_git/souvenir-sap-azure-apps
 cd souvenir-sap-azure-apps
 cd k8s-login-helper 
+npm install
+export HOST=0.0.0.0
 node index.js &
 
-sleep 3m
+sleep 2m
 sudo kubectl port-forward -n kubeapps svc/kubeapps 8080:80 --address 0.0.0.0
 
 #sudo rm /var/lib/apt/lists/lock
