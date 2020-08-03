@@ -76,7 +76,7 @@ cd k8s-login-helper
 npm install
 sudo su
 export HOST=0.0.0.0
-node index.js &
+sudo node index.js &
 
 sleep 2m
 sudo kubectl port-forward -n kubeapps svc/kubeapps 8080:80 --address 0.0.0.0
