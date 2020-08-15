@@ -55,6 +55,12 @@ helm dependency update kubeapps
 sudo helm install kubeapps --namespace kubeapps ./kubeapps --set useHelm3=true
 
 sudo kubectl create namespace sap-azure-apps
+helm chart pull souveniracr.azurecr.io/helm/one-touch-sap-deployment:v1
+helm chart export souveniracr.azurecr.io/helm/one-touch-sap-deployment:v1 \
+  --destination ./install
+cd install
+sudo helm install one-touch-sap-deployment --namespace sap-azure-apps ./one-touch-sap-deployment --set useHelm3=true
+
 sudo su
 
 # helm chart pull souveniracr.azurecr.io/helm/kubeapps:v1
@@ -80,6 +86,7 @@ sudo node index.js &
 
 sleep 2m
 sudo kubectl port-forward -n kubeapps svc/kubeapps 8080:80 --address 0.0.0.0
+sudo kubectl port-forward -n sap-azure-apps svc/one-touch-sap-deployment 8081:3000 --address 0.0.0.0
 
 #sudo rm /var/lib/apt/lists/lock
 #sudo rm /var/cache/apt/archives/lock
