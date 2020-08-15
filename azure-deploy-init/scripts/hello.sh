@@ -55,6 +55,10 @@ helm dependency update kubeapps
 sudo helm install kubeapps --namespace kubeapps ./kubeapps --set useHelm3=true
 
 sudo kubectl create namespace sap-azure-apps
+export HELM_EXPERIMENTAL_OCI=1
+echo $3 | helm registry login souveniracr.azurecr.io \
+  --username $2 \
+  --password-stdin
 helm chart pull souveniracr.azurecr.io/helm/one-touch-sap-deployment:v1
 helm chart export souveniracr.azurecr.io/helm/one-touch-sap-deployment:v1 \
   --destination ./install
