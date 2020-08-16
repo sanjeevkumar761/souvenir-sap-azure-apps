@@ -91,8 +91,9 @@ export HOST=0.0.0.0
 sudo node index.js &
 
 sleep 2m
-sudo kubectl port-forward -n kubeapps svc/kubeapps 8080:80 --address 0.0.0.0
-sudo kubectl port-forward -n sap-azure-apps svc/one-touch-sap-deployment 8081:3000 --address 0.0.0.0
+sudo kubectl port-forward -n kubeapps svc/kubeapps 8080:80 --address 0.0.0.0 &
+sleep 1m
+sudo kubectl port-forward -n sap-azure-apps svc/one-touch-sap-deployment 8081:3000 --address 0.0.0.0 &
 
 #sudo rm /var/lib/apt/lists/lock
 #sudo rm /var/cache/apt/archives/lock
