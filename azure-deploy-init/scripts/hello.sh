@@ -71,6 +71,13 @@ helm chart export souveniracr.azurecr.io/helm/one-touch-sap-deployment:v1 \
 cd install
 sudo helm install one-touch-sap-deployment --namespace sap-azure-apps ./one-touch-sap-deployment --set useHelm3=true
 
+#install helm chart for azure-sap-builder
+helm chart pull souveniracr.azurecr.io/helm/sap-azure-builder:v1
+helm chart export souveniracr.azurecr.io/helm/sap-azure-builder:v1 \
+  --destination ./install
+cd install
+sudo helm install sap-azure-builder --namespace sap-azure-apps ./sap-azure-builder --set useHelm3=true
+
 sudo su
 
 # helm chart pull souveniracr.azurecr.io/helm/kubeapps:v1
@@ -101,7 +108,7 @@ sleep 2m
 sudo kubectl port-forward -n kubeapps svc/kubeapps 8080:80 --address 0.0.0.0 &
 sleep 1m
 sudo kubectl port-forward -n sap-azure-apps svc/one-touch-sap-deployment 8081:3000 --address 0.0.0.0 &
-
+sudo kubectl port-forward -n sap-azure-apps svc/sap-azure-builder 8082:5000 --address 0.0.0.0 &
 #sudo rm /var/lib/apt/lists/lock
 #sudo rm /var/cache/apt/archives/lock
 #sudo rm /var/lib/dpkg/lock*
