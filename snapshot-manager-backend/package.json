@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "async": "0.2.7",
+    "async": "2.6.4",
     "azure-arm-compute": "^10.0.0",
     "azure-arm-network": "^13.0.0",
     "azure-arm-resource": "^7.4.0",
